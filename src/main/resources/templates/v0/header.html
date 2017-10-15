@@ -1,0 +1,9 @@
+<header class="ui-header ui-header-positive ui-border-b header">
+    <i class="ui-icon-return btn-back" onclick="history.back()"></i><h1>${title}</h1><button class="ui-btn btn-index-back" onclick="window.location.href='/'">回首页</button><button class="ui-btn-s btn-login-guide" onclick="window.location.href='/login'">登录</button>
+    <script type="text/javascript">
+        if (window.location.href == (window.location.protocol+"//"+window.location.host+"/" || window.location.protocol+"//"+window.location.host)){
+            $(".header .btn-back").hide()
+            $(".header .btn-index-back").hide()
+        }
+    </script>
+</header>

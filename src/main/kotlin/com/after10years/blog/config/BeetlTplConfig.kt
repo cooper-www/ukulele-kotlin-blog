@@ -36,7 +36,6 @@ class BeetlTplConfig {
     @Bean(name = arrayOf("beetlViewResolver"))
     fun getBeetlSpringViewResolver(@Autowired beetlGroupUtilConfiguration: BeetlGroupUtilConfiguration): BeetlSpringViewResolver {
         val beetlSpringViewResolver = BeetlSpringViewResolver()
-        beetlSpringViewResolver.setPrefix("/")
         beetlSpringViewResolver.setSuffix(".html")
         beetlSpringViewResolver.setContentType("text/html;charset=UTF-8")
         beetlSpringViewResolver.order = 0

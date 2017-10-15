@@ -10,9 +10,7 @@ class WelcomeController {
     @GetMapping("/")
     fun index() : ModelAndView {
         val mav = ModelAndView()
-
         //获取轮播图
-
         return mav
     }
 }

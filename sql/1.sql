@@ -26,4 +26,38 @@ CREATE TABLE blog_module(
   addTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE = INNODB COMMENT = '模块'
 
-#
+#帖子表
+CREATE TABLE blog_article(
+  articleId INT(11) unsigned KEY auto_increment,
+  uid INT(11) unsigned NOT NULL comment '用户ID',
+  moduleId INT(11) unsigned not null comment '模块ID',
+  title VARCHAR(255) not NULL comment '标题',
+  content VARCHAR(2048) NOT NULL comment '内容',
+  tag VARCHAR(512) not NULL comment '标签，使用逗号分隔',
+  addTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  status TINYINT(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态 1有效 0用户删除 99管理员删除'
+)ENGINE = INNODB COMMENT = '博客帖子表'
+
+#帖子回复评论表
+CREATE TABLE blog_article_comment(
+  commentId INT(11) UNSIGNED KEY auto_increment,
+  uid INT(11) unsigned NOT NULL COMMENT '用户ID',
+  toArticleId INT(11) unsigned not null comment '回复的文章ID',
+  toCommentId INT(11) unsigned NOT NULL DEFAULT 0 comment '回复的评论ID,0直接对帖子的回复',
+  content VARCHAR(512) comment '回复的文字内容',
+  imgs VARCHAR(2048) COMMENT '回复的图片，多个用逗号隔开',
+  addTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  status TINYINT(3) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态 1有效 0用户删除 99管理员删除'
+)ENGINE = INNODB COMMENT = '帖子评论回复表'
+
+
+
+
+
+
+
+
+
+
+
+

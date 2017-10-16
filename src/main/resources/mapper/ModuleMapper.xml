@@ -12,4 +12,17 @@
         ORDER BY sort DESC ,moduleId ASC
     </select>
 
+
+    <select id="getListByCommentHot" resultType="com.after10years.blog.model.ModuleModel">
+        SELECT l.moduleId,m.moduleName,m.uriRoute,m.img,m.pid,m.addTime,l.ccount AS commentCount
+        FROM (SELECT a.moduleId ,COUNT(c.commentId) ccount
+                FROM `blog_article_comment` as c
+                        LEFT JOIN `blog_article` AS a ON c.toArticleId = a.articleId
+                GROUP BY (moduleId)
+                ORDER BY ccount DESC
+                LIMIT #{limit}
+        ) as l
+        INNER JOIN `blog_module` m ON m.moduleId = l.moduleId
+        ORDER BY l.ccount DESC
+    </select>
 </mapper>

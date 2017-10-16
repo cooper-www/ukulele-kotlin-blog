@@ -19,10 +19,9 @@
         </ul>
     </div>
     <div class="ui-panel ui-panel-simple ui-border-tb">
-        <h2 class="ui-arrowlink"><span>JAVA</span><span class="ui-panel-subtitle">热度:1920</span><span class="ui-panel-title-tips">更多</span></h2>
-        <h2 class="ui-arrowlink"><span>PHP</span><span class="ui-panel-subtitle">热度:1920</span><span class="ui-panel-title-tips">更多</span></h2>
-        <h2 class="ui-arrowlink"><span>C/C++</span><span class="ui-panel-subtitle">热度:1920</span><span class="ui-panel-title-tips">更多</span></h2>
-        <h2 class="ui-arrowlink"><span>Linux</span><span class="ui-panel-subtitle">热度:1920</span><span class="ui-panel-title-tips">更多</span></h2>
+        <% for(hm in hotModules){ %>
+        <h2 class="ui-arrowlink"><span>${hm.moduleName}</span><span class="ui-panel-subtitle">热度:1920</span><span class="ui-panel-title-tips">更多</span></h2>
+        <% };%>
     </div>
     <div class="ui-panel ui-panel-simple ui-border-tb">
         <h2 class="ui-arrowlink"><span>最近博文</span><span class="ui-panel-subtitle">最后刷新:5分钟前</span><span class="ui-panel-title-tips">更多</span></h2>

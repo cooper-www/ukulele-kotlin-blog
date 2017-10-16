@@ -13,6 +13,9 @@ class WelcomeController(val moduleService: ModuleService) {
         val navModules = moduleService.getModuleList(0)
         val mav = ModelAndView()
         mav.addObject("navModules",navModules)
+        //查询热度前5名的模块，!!!注意没有任何评论过时模块不显示
+        val hotModules = moduleService.getModuleListByCommentHot(5)
+        mav.addObject("hotModules",hotModules)
         //获取轮播图
         return mav
     }

@@ -10,9 +10,9 @@ class ModuleModel {
     var img : String? = null
     var pid : Int? = null
     var addTime : Timestamp? = null
-
+    var commentCount : Int? = null
     override fun toString(): String {
-        return "ModuleModel(moduleId=$moduleId, uriRoute=$uriRoute, moduleName=$moduleName, img=$img, pid=$pid, addTime=$addTime)"
+        return "ModuleModel(moduleId=$moduleId, uriRoute=$uriRoute, moduleName=$moduleName, img=$img, pid=$pid, addTime=$addTime, commentCount=$commentCount)"
     }
 
 }

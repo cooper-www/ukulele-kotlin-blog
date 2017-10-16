@@ -13,5 +13,6 @@ interface ModuleMapper {
     //获取单个
     fun getById(@Param("moduleId") moduleId : Int) : List<ModuleModel>
 
-
+    //根据评论热度获取模块
+    fun getListByCommentHot(@Param("limit") limit : Int):List<ModuleModel>
 }

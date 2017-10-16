@@ -6,14 +6,9 @@
     <div class="ui-tab">
         <ul class="ui-tab-nav ui-border-b">
             <li class="current">热门推荐</li>
-            <li>Java</li>
-            <li>Php</li>
-            <li>C/C++</li>
-            <li>Linux</li>
-            <li>Go</li>
-            <li>Kotlin</li>
-            <li>Python</li>
-            <li>Node.js</li>
+            <% for(mo in navModules){ %>
+            <li onclick="window.location.href='${mo.uriRoute}'">${mo.moduleName}</li>
+            <% }; %>
         </ul>
     </div>
     <div class="ui-slider" id="slider">

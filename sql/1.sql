@@ -14,3 +14,16 @@ CREATE TABLE blog_banner(
   endTime INT(12) unsigned NOT NULL DEFAULT 0 comment '结束时间 0不限',
   addTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIME COMMENT '添加时间'
 )ENGINE = INNODB COMMENT = 'banner配置'
+
+#MODULE
+CREATE TABLE blog_module(
+  moduleId int(11) unsigned KEY auto_increment,
+  uriRoute varchar(30) not NULL comment '模块路由',
+  moduleName VARCHAR(50) NOT NULL comment '模块名',
+  img VARCHAR(1024) NOT NULL comment '图片',
+  sort INT(11) unsigned NOT NULL DEFAULT 0 comment '排序权重',
+  pid INT(11) unsigned not NULL DEFAULT 0 comment '父模块',
+  addTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE = INNODB COMMENT = '模块'
+
+#

@@ -3,6 +3,7 @@ package com.after10years.blog.controller
 import com.after10years.blog.service.ModuleService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.servlet.ModelAndView
 
 @Controller
@@ -18,5 +19,22 @@ class WelcomeController(val moduleService: ModuleService) {
         mav.addObject("hotModules",hotModules)
         //获取轮播图
         return mav
+    }
+
+
+    @GetMapping("/test")
+    fun test() : ModelAndView{
+        return ModelAndView("welcome/test")
+    }
+
+    @GetMapping("/test/users")
+    @ResponseBody
+    fun testUsers():List<Map<String,Any>>{
+        var users : List<Map<String,Any>> = ArrayList()
+        for (i in 1..10){
+            var user = HashMap<String,Any>()
+            user["s"] = 1
+
+        }
     }
 }

@@ -51,6 +51,13 @@ CREATE TABLE blog_article_comment(
 )ENGINE = INNODB COMMENT = '帖子评论回复表'
 
 
+#用户表
+CREATE TABLE blog_user(
+  userId INT(11) KEY
+
+)
+
+
 
 
 

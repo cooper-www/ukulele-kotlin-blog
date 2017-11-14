@@ -1,0 +1,20 @@
+<% var title = "博客首页"; var layoutHead = { %>
+<script type="text/javascript">
+    $(function () {
+
+    })
+</script>
+<% }; %>
+<% layout("/common.html",{"layoutHead":layoutHead,"title":title}){ %>
+<div id="box">
+    <table id="users">
+        <thead>
+        <tr><td>ID</td><td>姓名</td><td>性别</td><td>年龄</td></tr>
+        </thead>
+        <tbody>
+        <tr><td>1</td><td>测试</td><td>男</td><td>16</td></tr>
+        </tbody>
+    </table>
+</div>
+<% }; %>
+
